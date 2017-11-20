@@ -66,13 +66,46 @@ defmodule HamburgCityJobs.JobBoardTest do
       company = build(:company)
       assert %Ecto.Changeset{} = JobBoard.change_company(company)
     end
+  end
 
-    defp format_errors(changeset) do
-      Ecto.Changeset.traverse_errors(changeset, fn {msg, opts} ->
-        Enum.reduce(opts, msg, fn {key, value}, acc ->
-          String.replace(acc, "%{#{key}}", to_string(value))
-        end)
-      end)
+  describe "branches" do
+    alias HamburgCityJobs.JobBoard.Branch
+
+    setup do
+      company = insert(:company)
+      {:ok, company: company}
     end
+
+    test "list_company_banches/1 return all branches for the company", %{company: company} do
+      [branch_1, branch_2] = insert_pair(:branch, %{company: company})
+      fetched_branches = JobBoard.list_company_branches(company)
+
+      assert length(fetched_branches) == 2
+      assert Enum.find(fetched_branches, &(&1.id == branch_1.id))
+      assert Enum.find(fetched_branches, &(&1.id == branch_2.id))
+    end
+
+    test "list_company_branches/1 does not include branches from the other companies", %{company: company} do
+      foreign_branch = insert(:branch)
+      refute Enum.find(JobBoard.list_company_branches(company), &(&1.id == foreign_branch.id))
+    end
+
+    test "create_company_branch/2 with valid data creates a company's branch", %{company: company} do
+      branch_attrs = params_for(:branch, %{company: nil})
+
+      assert {:ok, %Branch{} = branch} = JobBoard.create_company_branch(company, branch_attrs)
+      assert branch.address == branch_attrs.address
+      assert branch.company_id == company.id
+    end
+  end
+
+  # HELPERS
+
+  defp format_errors(changeset) do
+    Ecto.Changeset.traverse_errors(changeset, fn {msg, opts} ->
+      Enum.reduce(opts, msg, fn {key, value}, acc ->
+        String.replace(acc, "%{#{key}}", to_string(value))
+      end)
+    end)
   end
 end

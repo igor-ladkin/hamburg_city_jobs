@@ -1,11 +1,13 @@
 defmodule HamburgCityJobs.JobBoard.Company do
   use Ecto.Schema
   import Ecto.Changeset
-  alias HamburgCityJobs.JobBoard.Company
+  alias HamburgCityJobs.JobBoard.{Branch, Company}
 
 
   schema "companies" do
     field :name, :string
+
+    has_many :branches, Branch
 
     timestamps()
   end

@@ -6,7 +6,7 @@ defmodule HamburgCityJobs.JobBoard do
   import Ecto.Query, warn: false
   alias HamburgCityJobs.Repo
 
-  alias HamburgCityJobs.JobBoard.Company
+  alias HamburgCityJobs.JobBoard.{Branch, Company}
 
   @doc """
   Returns the list of companies.
@@ -19,6 +19,13 @@ defmodule HamburgCityJobs.JobBoard do
   """
   def list_companies do
     Repo.all(Company)
+  end
+
+  @doc """
+  Returns the list of branches for particular company.
+  """
+  def list_company_branches(%Company{} = company) do
+    Ecto.assoc(company, :branches) |> Repo.all
   end
 
   @doc """
@@ -52,6 +59,15 @@ defmodule HamburgCityJobs.JobBoard do
   def create_company(attrs \\ %{}) do
     %Company{}
     |> Company.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Creates a new branch for particular company.
+  """
+  def create_company_branch(%Company{} = company, attrs \\ %{}) do
+    Ecto.build_assoc(company, :branches)
+    |> Branch.changeset(attrs)
     |> Repo.insert()
   end
 

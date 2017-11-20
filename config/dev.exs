@@ -50,6 +50,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :hamburg_city_jobs, HamburgCityJobs.Repo,
   adapter: Ecto.Adapters.Postgres,
+  types: HamburgCityJobs.PostgresTypes,
   username: "postgres",
   password: "postgres",
   database: "hamburg_city_jobs_dev",
