@@ -45,6 +45,13 @@ defmodule HamburgCityJobs.JobBoard do
   def get_company!(id), do: Repo.get!(Company, id)
 
   @doc """
+  Gets a single branch.
+
+  Raises `Ecto.NoResultsError` if the Branch does not esist.
+  """
+  def get_branch!(id), do: Repo.get!(Branch, id)
+
+  @doc """
   Creates a company.
 
   ## Examples

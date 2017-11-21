@@ -97,6 +97,19 @@ defmodule HamburgCityJobs.JobBoardTest do
       assert branch.address == branch_attrs.address
       assert branch.company_id == company.id
     end
+
+    test "get_branch!/1 returns the branch with given id" do
+      branch = insert(:branch)
+      fetched_branch = JobBoard.get_branch!(branch.id)
+
+      assert fetched_branch.id == branch.id
+      assert fetched_branch.address == branch.address
+      assert fetched_branch.company_id == branch.company_id
+    end
+
+    test "get_branch!/1 raises an error if the correct branch was not found" do
+      assert_raise Ecto.NoResultsError, ~r/expected at least one result/, fn -> JobBoard.get_branch!(42) end
+    end
   end
 
   # HELPERS
