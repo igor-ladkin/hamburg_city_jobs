@@ -1,7 +1,7 @@
 defmodule HamburgCityJobs.JobBoard.Branch do
   use Ecto.Schema
   import Ecto.Changeset
-  alias HamburgCityJobs.JobBoard.{Branch, Company}
+  alias HamburgCityJobs.JobBoard.{Branch, BranchVacancy, Company, Vacancy}
 
 
   schema "branches" do
@@ -9,6 +9,7 @@ defmodule HamburgCityJobs.JobBoard.Branch do
     field :location, Geo.Geometry
 
     belongs_to :company, Company
+    many_to_many :vacancies, Vacancy, join_through: BranchVacancy
 
     timestamps()
   end

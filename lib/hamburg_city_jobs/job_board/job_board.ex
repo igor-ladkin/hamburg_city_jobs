@@ -6,7 +6,7 @@ defmodule HamburgCityJobs.JobBoard do
   import Ecto.Query, warn: false
   alias HamburgCityJobs.Repo
 
-  alias HamburgCityJobs.JobBoard.{Branch, Company}
+  alias HamburgCityJobs.JobBoard.{Branch, Company, Vacancy}
 
   @doc """
   Returns the list of companies.
@@ -75,6 +75,28 @@ defmodule HamburgCityJobs.JobBoard do
   def create_company_branch(%Company{} = company, attrs \\ %{}) do
     Ecto.build_assoc(company, :branches)
     |> Branch.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Associate passed vacancies with a particular branch.
+  """
+  def add_vacancies_to_branch(%Branch{} = branch, []) do
+    Branch
+    |> preload(:vacancies)
+    |> Repo.get(branch.id)
+  end
+  # def add_vacancies_to_branch(%Branch{} = branch, vacancies) do
+  #   branch
+  #   |>
+  # end
+
+  @doc """
+  Creates new vacancy
+  """
+  def create_vacancy(attrs \\ %{}) do
+    %Vacancy{}
+    |> Vacancy.changeset(attrs)
     |> Repo.insert()
   end
 

@@ -24,8 +24,8 @@ defmodule HamburgCityJobs.JobBoardTest do
     end
 
     test "create_company/1 does not allow to create the company with the same name but different case" do
-      company_attrs = params_for(:company, %{name: "CityJobs"})
-      duplicated_attrs = params_for(:company, %{name: "CITYJOBS"})
+      company_attrs = params_for(:company, name: "CityJobs")
+      duplicated_attrs = params_for(:company, name: "CITYJOBS")
 
       assert {:ok, _} = JobBoard.create_company(company_attrs)
       assert {:error, %Ecto.Changeset{} = changeset} = JobBoard.create_company(duplicated_attrs)
@@ -35,7 +35,7 @@ defmodule HamburgCityJobs.JobBoardTest do
     end
 
     test "create_company/1 with invalid data returns error changeset" do
-      company_attrs = params_for(:company, %{name: nil})
+      company_attrs = params_for(:company, name: nil)
       assert {:error, %Ecto.Changeset{}} = JobBoard.create_company(company_attrs)
     end
 
@@ -109,6 +109,22 @@ defmodule HamburgCityJobs.JobBoardTest do
 
     test "get_branch!/1 raises an error if the correct branch was not found" do
       assert_raise Ecto.NoResultsError, ~r/expected at least one result/, fn -> JobBoard.get_branch!(42) end
+    end
+
+  describe "vacancies" do
+    alias HamburgCityJobs.JobBoard.Vacancy
+
+    test "create_vacancy/1 with a valid data creates a vacancy" do
+      vacancy_attrs = params_for(:vacancy)
+
+      assert {:ok, %Vacancy{} = vacancy} = JobBoard.create_vacancy(vacancy_attrs)
+      assert vacancy.title  == vacancy_attrs.title
+      assert vacancy.description == vacancy_attrs.description
+    end
+
+    test "create_vacancy/1 with invalid data returns error changeset" do
+      vacancy_attrs = params_for(:vacancy, title: nil)
+      assert {:error, %Ecto.Changeset{}} = JobBoard.create_vacancy(vacancy_attrs)
     end
   end
 
