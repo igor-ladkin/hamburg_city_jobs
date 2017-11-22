@@ -7,7 +7,7 @@ defmodule HamburgCityJobs.JobBoard.Branch do
 
   schema "branches" do
     field :address, :string
-    field :location, Geo.Geometry
+    field :location, Geo.Point
 
     belongs_to :company, Company
     many_to_many :vacancies, Vacancy, join_through: BranchVacancy
