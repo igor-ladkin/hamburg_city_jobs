@@ -1,0 +1,14 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 1.5em;;
+}
+
+.map {
+  margin-top: 61px;
+  height: calc(100vh - 61px);
+  width: 100%;
+}
