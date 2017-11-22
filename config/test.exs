@@ -12,8 +12,9 @@ config :logger, level: :warn
 # Configure your database
 config :hamburg_city_jobs, HamburgCityJobs.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  types: HamburgCityJobs.PostgresTypes,
+  username: System.get_env("DATABASE_POSTGRESQL_USERNAME") || "postgres",
+  password: System.get_env("DATABASE_POSTGRESQL_PASSWORD") || "postgres",
   database: "hamburg_city_jobs_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

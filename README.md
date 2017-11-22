@@ -1,5 +1,8 @@
 # HamburgCityJobs
 
+[![Build Status](https://semaphoreci.com/api/v1/thrasherdgk/hamburg_city_jobs/branches/master/badge.svg)](https://semaphoreci.com/thrasherdgk/hamburg_city_jobs)
+[![Ebert](https://ebertapp.io/github/thrasherDGK/hamburg_city_jobs.svg)](https://ebertapp.io/github/thrasherDGK/hamburg_city_jobs)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
