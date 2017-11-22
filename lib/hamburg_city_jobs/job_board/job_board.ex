@@ -42,7 +42,7 @@ defmodule HamburgCityJobs.JobBoard do
       ** (Ecto.NoResultsError)
 
   """
-  def get_company!(id), do: Repo.get!(Company, id)
+  def get_company!(id, query \\ Company), do: Repo.get!(query, id)
 
   @doc """
   Gets a single branch.
