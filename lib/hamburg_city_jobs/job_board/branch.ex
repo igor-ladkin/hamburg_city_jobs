@@ -1,6 +1,7 @@
 defmodule HamburgCityJobs.JobBoard.Branch do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
   alias HamburgCityJobs.JobBoard.{Branch, BranchVacancy, Company, Vacancy}
 
 
@@ -20,5 +21,12 @@ defmodule HamburgCityJobs.JobBoard.Branch do
     |> cast(attrs, [:address, :location])
     |> validate_required([:address])
     |> assoc_constraint(:company)
+  end
+
+  @doc """
+  Preloads vacancies.
+  """
+  def with_vacancies do
+    Branch |> preload(:vacancies)
   end
 end

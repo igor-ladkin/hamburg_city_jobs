@@ -49,7 +49,7 @@ defmodule HamburgCityJobs.JobBoard do
 
   Raises `Ecto.NoResultsError` if the Branch does not esist.
   """
-  def get_branch!(id), do: Repo.get!(Branch, id)
+  def get_branch!(id, query \\ Branch), do: Repo.get!(query, id)
 
   @doc """
   Creates a company.
@@ -81,15 +81,14 @@ defmodule HamburgCityJobs.JobBoard do
   @doc """
   Associate passed vacancies with a particular branch.
   """
-  def add_vacancies_to_branch(%Branch{} = branch, []) do
-    Branch
-    |> preload(:vacancies)
-    |> Repo.get(branch.id)
+  def add_vacancies_to_branch(%Branch{id: id}, vacancies \\ []) do
+    vacancies = List.wrap(vacancies)
+
+    get_branch!(id, Branch.with_vacancies)
+    |> Branch.changeset(%{})
+    |> Ecto.Changeset.put_assoc(:vacancies, vacancies, on_replace: :update)
+    |> Repo.update()
   end
-  # def add_vacancies_to_branch(%Branch{} = branch, vacancies) do
-  #   branch
-  #   |>
-  # end
 
   @doc """
   Creates new vacancy

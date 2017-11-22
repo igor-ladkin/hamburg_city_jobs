@@ -111,6 +111,15 @@ defmodule HamburgCityJobs.JobBoardTest do
       assert_raise Ecto.NoResultsError, ~r/expected at least one result/, fn -> JobBoard.get_branch!(42) end
     end
 
+    test "add_vacancies_to_branch/2 when multiple vacancies were passed returns a branch with vacancies including newly created ones" do
+      branch = insert(:branch)
+      vacancies = build_pair(:vacancy)
+
+      assert {:ok, %Branch{} = branch_with_vacancies} = JobBoard.add_vacancies_to_branch(branch, vacancies)
+      assert length(branch_with_vacancies.vacancies) == 2
+    end
+  end
+
   describe "vacancies" do
     alias HamburgCityJobs.JobBoard.Vacancy
 
