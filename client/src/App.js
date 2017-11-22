@@ -5,6 +5,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Map from './components/Map';
+import Search from './components/Search';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <Container fluid>
         <Header />
         <Map />
+        <Search />
       </Container>
     );
   }

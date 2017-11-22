@@ -12,3 +12,10 @@ html, body {
   height: calc(100vh - 61px);
   width: 100%;
 }
+
+.search {
+  position: fixed !important;
+  top: 58px;
+  right: 14px;
+  z-index: 1000;
+}
