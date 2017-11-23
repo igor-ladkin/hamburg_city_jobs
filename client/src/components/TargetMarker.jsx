@@ -18,6 +18,7 @@ const TargetMarker = (props) => (
   <Marker
     icon={targetIcon}
     draggable
+    zIndexOffset={500}
     {...props}
   />
 );

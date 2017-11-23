@@ -149,8 +149,10 @@ defmodule HamburgCityJobs.JobBoard do
   @doc """
   Fetches the branches based on the company name and location
   """
-  def fetch_branches() do
+  def fetch_branches(%{company_name: company_name, location: location, radius: radius}) do
     Branch
+    |> Branch.with_company_like(company_name)
+    |> Branch.within_distance(location, radius)
     |> preload(:company)
     |> limit(500)
     |> Repo.all()
