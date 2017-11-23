@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b44fff6-e301-4a19-8c06-55a57d6033c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/components/StopMarker.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/hamburg_city_jobs_web/controllers/public_transport_controller.ex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/hamburg_city_jobs_web/views/public_transport_view.ex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/App.js" afterPath="$PROJECT_DIR$/client/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/components/Map.jsx" afterPath="$PROJECT_DIR$/client/src/components/Map.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/branch.ex" afterPath="$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/branch.ex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/job_board.ex" afterPath="$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/job_board.ex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/hamburg_city_jobs_web/router.ex" afterPath="$PROJECT_DIR$/lib/hamburg_city_jobs_web/router.ex" />
-    </list>
+    <list default="true" id="9b44fff6-e301-4a19-8c06-55a57d6033c5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/_build/dev/lib/hamburgcityjobs/ebin/" />
     <ignored path="$PROJECT_DIR$/_build/test/lib/hamburgcityjobs/ebin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,96 +58,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="public_transport_controller.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hamburg_city_jobs_web/controllers/public_transport_controller.ex">
+      <file leaf-file-name="20171123172452_add_location_indexes.exs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20171123172452_add_location_indexes.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="195">
+              <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="public_transport_view.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hamburg_city_jobs_web/views/public_transport_view.ex">
+      <file leaf-file-name="20171120204508_enable_postgis.exs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20171120204508_enable_postgis.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="9" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search_view.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hamburg_city_jobs_web/views/search_view.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="branch.ex" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/branch.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="871">
-              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search_controller.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/hamburg_city_jobs_web/controllers/search_controller.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TargetMarker.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/TargetMarker.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StopMarker.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/StopMarker.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Map.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="28" lean-forward="false" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -203,6 +119,7 @@
         <option value="$PROJECT_DIR$/client/src/components/Map.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/StopMarker.jsx" />
         <option value="$PROJECT_DIR$/lib/hamburg_city_jobs/job_board/branch.ex" />
+        <option value="$PROJECT_DIR$/priv/repo/migrations/20171123172452_add_location_indexes.exs" />
       </list>
     </option>
   </component>
@@ -511,12 +428,12 @@
       <updated>1511425058339</updated>
       <workItem from="1511425065575" duration="160000" />
       <workItem from="1511425258114" duration="4369000" />
-      <workItem from="1511449624993" duration="7495000" />
+      <workItem from="1511449624993" duration="8208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12024000" />
+    <option name="totallyTimeSpent" value="12737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1280" height="1413" extended-state="0" />
@@ -535,8 +452,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2980614" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12295409" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2980614" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12520194" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -935,6 +852,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="871">
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20171120204508_enable_postgis.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20171123172452_add_location_indexes.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="2" lean-forward="false" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
           <folding />
         </state>
       </provider>
