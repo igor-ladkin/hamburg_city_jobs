@@ -35,10 +35,16 @@ defmodule HamburgCityJobs.JobBoard.Branch do
   Fetches branches with company name similar to passed param.
   """
   def with_company_like(query, company_name) do
-    from b in query,
-      join: c in assoc(b, :company),
-      where: ilike(c.name, ^"%#{company_name}%"),
-      preload: [company: c]
+    case String.length(company_name) == 0 do
+      true ->
+        from b in query,
+           preload: :company
+      _ ->
+        from b in query,
+          join: c in assoc(b, :company),
+          where: ilike(c.name, ^"%#{company_name}%"),
+          preload: [company: c]
+    end
   end
 
   @doc """
@@ -67,3 +73,5 @@ defmodule HamburgCityJobs.JobBoard.Branch do
     end
   end
 end
+
+

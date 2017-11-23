@@ -6,7 +6,7 @@ defmodule HamburgCityJobs.JobBoard do
   import Ecto.Query, warn: false
   alias HamburgCityJobs.Repo
 
-  alias HamburgCityJobs.JobBoard.{Branch, Company, Vacancy}
+  alias HamburgCityJobs.JobBoard.{Branch, Company, Vacancy, PublicTransport}
 
   @doc """
   Returns the list of companies.
@@ -157,5 +157,13 @@ defmodule HamburgCityJobs.JobBoard do
     |> preload(:company)
     |> limit(500)
     |> Repo.all()
+  end
+
+  @doc """
+  Returns the list of public transport stops.
+
+  """
+  def list_public_transports do
+    Repo.all(PublicTransport)
   end
 end

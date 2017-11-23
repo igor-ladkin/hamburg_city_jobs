@@ -23,5 +23,6 @@ defmodule HamburgCityJobsWeb.Router do
     pipe_through :api
 
     get "/search", SearchController, :index
+    resources "/public_transports", PublicTransportController, only: [:index]
   end
 end

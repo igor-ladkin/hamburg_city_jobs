@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map as LeafletMap, Popup, TileLayer, Marker } from 'react-leaflet';
 import TargetMarker from './TargetMarker';
+import StopMarker from './StopMarker';
 
 class Map extends Component {
   renderBranch({ id, company, address, location }) {
@@ -18,9 +19,24 @@ class Map extends Component {
     )
   }
 
+    renderStop({ id, name, location }) {
+        const position = [location.lat, location.lng];
+
+        return (
+            <StopMarker key={id} position={position}>
+
+            </StopMarker>
+        )
+    }
+
   renderBranches() {
     const { branches } = this.props;
     return branches.map(this.renderBranch)
+  }
+
+  renderStops() {
+    const {stops} = this.props;
+    return stops.map(this.renderStop)
   }
 
   render() {
@@ -36,6 +52,7 @@ class Map extends Component {
           </Popup>
         </TargetMarker>
         {this.renderBranches()}
+        {this.renderStops()}
       </LeafletMap>
     )
   }

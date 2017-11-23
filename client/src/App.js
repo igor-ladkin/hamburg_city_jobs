@@ -15,6 +15,7 @@ class App extends Component {
 
     this.state = {
       branches: [],
+      stops: [],
       radius: '',
       distancePT: '',
       companyName: '',
@@ -40,8 +41,17 @@ class App extends Component {
       });
   }
 
+    fetchStops() {
+        fetch(`/api/public_transports`)
+            .then(resp => resp.json())
+            .then(({ data }) => {
+                this.setState({stops: data});
+            });
+    }
+
   componentDidMount() {
     this.fetchBranches();
+    this.fetchStops()
   }
 
   updateSearchField(name, value) {
@@ -59,7 +69,7 @@ class App extends Component {
   }
 
   render() {
-    const { branches, targetPosition, companyName, radius } = this.state;
+    const { branches, targetPosition, companyName, radius, stops } = this.state;
 
     return (
       <Container fluid>
@@ -69,6 +79,7 @@ class App extends Component {
           targetPosition={targetPosition}
           updateLocation={this.updateLocation}
           fetchBranches={this.fetchBranches}
+          stops={stops}
         />
         <Search
           companyName={companyName}
