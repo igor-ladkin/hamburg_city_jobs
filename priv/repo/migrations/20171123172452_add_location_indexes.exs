@@ -11,5 +11,5 @@ defmodule HamburgCityJobs.Repo.Migrations.AddLocationIndexes do
     execute "DROP INDEX IF EXISTS public_transport_location_index;"
     execute "DROP INDEX IF EXISTS branch_location_index;"
   end
-  
+
 end
