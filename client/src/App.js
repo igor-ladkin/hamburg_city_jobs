@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       branches: [],
       radius: '',
+      distancePT: '',
       companyName: '',
       targetPosition: {
         lat: 53.5563943,
@@ -29,7 +30,7 @@ class App extends Component {
   }
 
   fetchBranches() {
-    const searchParams = _.pick(this.state, ['targetPosition', 'radius', 'companyName']);
+    const searchParams = _.pick(this.state, ['targetPosition', 'radius', 'companyName', 'distancePT']);
     const params = qs.stringify(searchParams);
 
     fetch(`/api/search?${params}`)

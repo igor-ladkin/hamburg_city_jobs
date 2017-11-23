@@ -54,4 +54,16 @@ defmodule HamburgCityJobs.JobBoard.Branch do
           where: st_dwithin(fragment("?::geography", b.location), fragment("?::geography", ^location), ^radius)
     end
   end
+
+  @doc """
+  Filters branches to be within the passed distance from a public transport stop
+  """
+  def within_public_transport(query, distance_public_transport) do
+    case Float.parse(distance_public_transport) do
+      :error -> query
+      {distance_public_transport, _} ->
+        from b in query,
+             where: fragment("exists(SELECT 1 FROM public_transports AS p WHERE ST_DWithin(p.location::geography, ?::geography, ?))", b.location, ^distance_public_transport)
+    end
+  end
 end
