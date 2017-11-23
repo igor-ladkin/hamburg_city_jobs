@@ -7,6 +7,7 @@ defmodule HamburgCityJobsWeb.SearchView do
 
   def render("branch.json", %{branch: branch}) do
     %{
+      id: branch.id,
       company: branch.company.name,
       address: branch.address,
       location: serialize_location(branch.location),

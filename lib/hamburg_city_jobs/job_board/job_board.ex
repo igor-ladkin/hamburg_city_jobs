@@ -151,7 +151,8 @@ defmodule HamburgCityJobs.JobBoard do
   """
   def fetch_branches() do
     Branch
-    |> preload(:company) 
+    |> preload(:company)
+    |> limit(500)
     |> Repo.all()
   end
 end
