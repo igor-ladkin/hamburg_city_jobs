@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="hamburg_city_jobs_dev@localhost" uuid="a5768d92-d8a0-4e76-ae77-07fa9e09024e">
+      <database-info product="PostgreSQL" version="10.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>hamburg_city_jobs_dev:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

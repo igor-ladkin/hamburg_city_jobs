@@ -42,6 +42,7 @@ defmodule HamburgCityJobs.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:geo_postgis, "~> 1.0"},
+      {:nimble_csv, "~> 0.3"},
       {:ex_machina, "~> 2.1", only: :test},
       {:faker, "~> 0.9", only: :test},
     ]

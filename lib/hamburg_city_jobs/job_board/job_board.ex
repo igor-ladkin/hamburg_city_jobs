@@ -6,7 +6,7 @@ defmodule HamburgCityJobs.JobBoard do
   import Ecto.Query, warn: false
   alias HamburgCityJobs.Repo
 
-  alias HamburgCityJobs.JobBoard.{Branch, Company, Vacancy}
+  alias HamburgCityJobs.JobBoard.{Branch, Company, Vacancy, PublicTransport}
 
   @doc """
   Returns the list of companies.
@@ -42,14 +42,14 @@ defmodule HamburgCityJobs.JobBoard do
       ** (Ecto.NoResultsError)
 
   """
-  def get_company!(id), do: Repo.get!(Company, id)
+  def get_company!(id, query \\ Company), do: Repo.get!(query, id)
 
   @doc """
   Gets a single branch.
 
   Raises `Ecto.NoResultsError` if the Branch does not esist.
   """
-  def get_branch!(id), do: Repo.get!(Branch, id)
+  def get_branch!(id, query \\ Branch), do: Repo.get!(query, id)
 
   @doc """
   Creates a company.
@@ -81,15 +81,14 @@ defmodule HamburgCityJobs.JobBoard do
   @doc """
   Associate passed vacancies with a particular branch.
   """
-  def add_vacancies_to_branch(%Branch{} = branch, []) do
-    Branch
-    |> preload(:vacancies)
-    |> Repo.get(branch.id)
+  def add_vacancies_to_branch(%Branch{id: id}, vacancies \\ []) do
+    vacancies = List.wrap(vacancies)
+
+    get_branch!(id, Branch.with_vacancies)
+    |> Branch.changeset(%{})
+    |> Ecto.Changeset.put_assoc(:vacancies, vacancies, on_replace: :update)
+    |> Repo.update()
   end
-  # def add_vacancies_to_branch(%Branch{} = branch, vacancies) do
-  #   branch
-  #   |>
-  # end
 
   @doc """
   Creates new vacancy
@@ -145,5 +144,26 @@ defmodule HamburgCityJobs.JobBoard do
   """
   def change_company(%Company{} = company) do
     Company.changeset(company, %{})
+  end
+
+  @doc """
+  Fetches the branches based on the company name and location
+  """
+  def fetch_branches(%{company_name: company_name, location: location, radius: radius, distance_public_transport: distance_public_transport}) do
+    Branch
+    |> Branch.with_company_like(company_name)
+    |> Branch.within_distance(location, radius)
+    |> Branch.within_public_transport(distance_public_transport)
+    |> preload(:company)
+    |> limit(500)
+    |> Repo.all()
+  end
+
+  @doc """
+  Returns the list of public transport stops.
+
+  """
+  def list_public_transports do
+    Repo.all(PublicTransport)
   end
 end

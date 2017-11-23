@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 1.5em;;
+}
+
+.map {
+  margin-top: 61px;
+  height: calc(100vh - 61px);
+  width: 100%;
+}
+
+.search {
+  position: fixed !important;
+  top: 58px;
+  right: 14px;
+  z-index: 1000;
+}

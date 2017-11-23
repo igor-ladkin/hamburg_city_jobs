@@ -19,8 +19,10 @@ defmodule HamburgCityJobsWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", HamburgCityJobsWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", HamburgCityJobsWeb do
+    pipe_through :api
+
+    get "/search", SearchController, :index
+    resources "/public_transports", PublicTransportController, only: [:index]
+  end
 end
