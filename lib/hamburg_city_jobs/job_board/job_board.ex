@@ -145,4 +145,13 @@ defmodule HamburgCityJobs.JobBoard do
   def change_company(%Company{} = company) do
     Company.changeset(company, %{})
   end
+
+  @doc """
+  Fetches the branches based on the company name and location
+  """
+  def fetch_branches() do
+    Branch
+    |> preload(:company) 
+    |> Repo.all()
+  end
 end
